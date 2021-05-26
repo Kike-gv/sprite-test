@@ -7,6 +7,7 @@ const Actor = ({
   position = { x: 0, y: 0 },
   step = 0,
   dir = 0,
+  size,
 }) => {
   const { h, w } = data;
 
@@ -17,6 +18,7 @@ const Actor = ({
       image={sprite}
       position={position}
       data={{ x: step * w, y: dir * h, w, h }}
+      size={size}
     />
   );
 };

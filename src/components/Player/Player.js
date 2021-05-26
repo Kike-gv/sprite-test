@@ -4,7 +4,7 @@ import Actor from "../Actor";
 import useKeyPress from "../../hooks/use-key-press";
 import useWalk from "../../hooks/use-walk";
 
-const Player = ({ skin }) => {
+const Player = ({ skin, size }) => {
   // https://www.pokecommunity.com/showthread.php?p=9797619
   //https://www.deviantart.com/aveontrainer/gallery/67900303/overworld
   const solairSize = 79.58;
@@ -24,6 +24,7 @@ const Player = ({ skin }) => {
       step={step}
       dir={dir}
       position={position}
+      size={size}
     />
   );
 };
