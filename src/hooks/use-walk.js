@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-export default function useWalk(maxSteps) {
-  const [position, setPosition] = useState({x: 0, y: 0});
+const useWalk = (maxSteps) => {
+  const [position, setPosition] = useState({ x: 0, y: 0 });
   const [dir, setDir] = useState(0);
   const [step, setStep] = useState(0);
 
@@ -20,7 +20,7 @@ export default function useWalk(maxSteps) {
     up: { x: 0, y: -stepSize },
   };
 
-  function walk(dir) {
+  const walk = (dir) => {
     if (directions[dir] !== undefined) {
       //   setDir(directions[dir]);
       setDir((prev) => {
@@ -29,15 +29,14 @@ export default function useWalk(maxSteps) {
       });
       setStep((prev) => (prev < maxSteps - 1 ? prev + 1 : 0));
     }
-    
-  }
+  };
 
-  function move(dir) {
+  const move = (dir) => {
     setPosition((prev) => ({
       x: prev.x + modifier[dir].x,
       y: prev.y + modifier[dir].y,
     }));
-  }
+  };
 
   return {
     walk,
@@ -45,4 +44,6 @@ export default function useWalk(maxSteps) {
     step,
     position,
   };
-}
+};
+
+export default useWalk;

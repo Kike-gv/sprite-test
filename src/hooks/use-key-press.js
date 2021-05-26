@@ -1,8 +1,10 @@
 import { useEffect } from "react";
 
-export default function useKeyPress(fn) {
+const useKeyPress = (fn) => {
   useEffect(() => {
     window.addEventListener("keydown", fn);
     return () => window.removeEventListener("keydown", fn);
   }, [fn]);
-}
+};
+
+export default useKeyPress;
