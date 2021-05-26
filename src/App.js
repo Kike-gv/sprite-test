@@ -4,7 +4,10 @@ import "./App.css";
 import Player from "./components/Player";
 
 function App() {
-  return <div> <Player skin='sudowodo'/></div>;
+
+  const skins = ['growlite','kabutops','sudowodo'];
+
+  return <div> <Player skin={skins[1]}/></div>;
 }
 
 export default App;
